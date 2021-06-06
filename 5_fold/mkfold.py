@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 #coding:utf-8
 
-""" This script creates the 5 folds used in the experiments reported in [1].
+"""
+    This script creates the 5 folds used in the experiments reported in [1].
 
     It ASSUMES:
         - that the path is relative to the current directory.
-        - that BreaKHis_v1.tar.gz was decompressed in current directory.
+        - that BreaKHis_v1.tar.gz was decompressed in a directory named 'data'.
 
     It REQUIRES:
         - text files dsfold1.txt, ... dsfold5.txt located in current directory.
@@ -15,7 +16,6 @@
 
     -------
     [1] Spanhol, F.A.; Oliveira, L.S.; Petitjean, C.; Heutte, L. "A Dataset for Breast Cancer Histopathological Image Classification". Biomedical Engineering, IEEE Transactions on. Year: 2015, DOI: 10.1109/TBME.2015.2496264
-
 """
 __author__ = "Fabio Alexandre Spanhol"
 __email__ = "faspanhol@gmail.com"
