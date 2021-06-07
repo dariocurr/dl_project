@@ -81,7 +81,7 @@ def create_folds_from_ds(dst_path='data/BreaKHis_v1/5_fold/', folds=(1,2,3,4,5))
 
             dstfile = dst_subdir + imgname
 
-            print("Copying from [%s] to [%s]" % (srcfile, dstfile))
+            # print("Copying from [%s] to [%s]" % (srcfile, dstfile))
             shutil.copy(srcfile, dstfile)
         print('\n\n\t\tFold #%d finished.\n' % nfold)
     db.close()
