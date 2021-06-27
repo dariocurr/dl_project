@@ -1,10 +1,13 @@
+# Author: @Goodsea (https://github.com/Goodsea)
+
 from tensorflow import keras
 from tensorflow.keras.layers import *
 
 
 def cbam_block(cbam_feature, ratio=8):
     # Author: @kobiso (https://github.com/kobiso)
-    """Contains the implementation of Convolutional Block Attention Module(CBAM) block.
+    """
+    Contains the implementation of Convolutional Block Attention Module(CBAM) block.
     As described in https://arxiv.org/abs/1807.06521.
     """
 
