@@ -20,15 +20,19 @@ def channel_attention(input_feature, ratio=8):
     channel_axis = 1 if keras.backend.image_data_format() == "channels_first" else -1
     channel = input_feature.shape[channel_axis]
 
-    shared_layer_one = Dense(channel//ratio,
-                             activation='relu',
-                             kernel_initializer='he_normal',
-                             use_bias=True,
-                             bias_initializer='zeros')
-    shared_layer_two = Dense(channel,
-                             kernel_initializer='he_normal',
-                             use_bias=True,
-                             bias_initializer='zeros')
+    shared_layer_one = Dense(
+        channel//ratio,
+        activation='relu',
+        kernel_initializer='he_normal',
+        use_bias=True,
+        bias_initializer='zeros'
+    )
+    shared_layer_two = Dense(
+        channel,
+        kernel_initializer='he_normal',
+        use_bias=True,
+        bias_initializer='zeros'
+    )
 
     avg_pool = GlobalAveragePooling2D()(input_feature)
     avg_pool = Reshape((1, 1, channel))(avg_pool)
@@ -65,21 +69,19 @@ def spatial_attention(input_feature):
         channel = input_feature.shape[-1]
         cbam_feature = input_feature
 
-    avg_pool = Lambda(lambda x: keras.backend.mean(
-        x, axis=3, keepdims=True))(cbam_feature)
+    avg_pool = Lambda(lambda x: keras.backend.mean(x, axis=3, keepdims=True))(cbam_feature)
     assert avg_pool.shape[-1] == 1
-    max_pool = Lambda(lambda x: keras.backend.max(
-        x, axis=3, keepdims=True))(cbam_feature)
+    max_pool = Lambda(lambda x: keras.backend.max(x, axis=3, keepdims=True))(cbam_feature)
     assert max_pool.shape[-1] == 1
     concat = Concatenate(axis=3)([avg_pool, max_pool])
     assert concat.shape[-1] == 2
     cbam_feature = Conv2D(filters=1,
-                          kernel_size=kernel_size,
-                          strides=1,
-                          padding='same',
-                          activation='sigmoid',
-                          kernel_initializer='he_normal',
-                          use_bias=False)(concat)
+        kernel_size=kernel_size,
+        strides=1,
+        padding='same',
+        activation='sigmoid',
+        kernel_initializer='he_normal',
+        use_bias=False)(concat)
     assert cbam_feature.shape[-1] == 1
 
     if keras.backend.image_data_format() == "channels_first":
@@ -93,18 +95,15 @@ def residual_block(y, nb_channels, _strides=(1, 1), _project_shortcut=False):
 
     shortcut = y
 
-    y = Conv2D(nb_channels, kernel_size=(3, 3),
-               strides=_strides, padding='same')(y)
+    y = Conv2D(nb_channels, kernel_size=(3, 3), strides=_strides, padding='same')(y)
     y = BatchNormalization()(y)
     y = LeakyReLU()(y)
 
-    y = Conv2D(nb_channels, kernel_size=(3, 3),
-               strides=(1, 1), padding='same')(y)
+    y = Conv2D(nb_channels, kernel_size=(3, 3), strides=(1, 1), padding='same')(y)
     y = BatchNormalization()(y)
 
     if _project_shortcut or _strides != (1, 1):
-        shortcut = Conv2D(nb_channels, kernel_size=(
-            1, 1), strides=_strides, padding='same')(shortcut)
+        shortcut = Conv2D(nb_channels, kernel_size=(1, 1), strides=_strides, padding='same')(shortcut)
         shortcut = BatchNormalization()(shortcut)
 
     y = Add()([shortcut, y])
