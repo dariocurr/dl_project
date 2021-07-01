@@ -2,6 +2,8 @@
 
 ## Abstract
 
+Deep learning application developed using Keras with the aim of diagnosing breast cancer
+
 ## Description
 
 Based on the results and the network presented in this [paper](https://arxiv.org/abs/1811.04241), I conducted an experiment on breast cancer classification.<br>
