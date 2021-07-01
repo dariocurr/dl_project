@@ -1,8 +1,8 @@
 # Experiment on Breast Cancer Classification
 
-## Abstract
+## Short description
 
-Deep learning application developed using Keras with the aim of diagnosing breast cancer
+Deep learning application developed using *python* and *Keras* with the aim of diagnosing breast cancer
 
 ## Description
 
