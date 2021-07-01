@@ -1,6 +1,6 @@
 # Experiment on Breast Cancer Classification
 
-## In brief
+## Briefly
 
 Deep learning application developed using *python* and *Keras* with the aim of diagnosing breast cancer
 
