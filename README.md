@@ -2,7 +2,7 @@
 
 ## About
 
-[Deep learning application](https://github.com/dariocurr/dl_project/blob/main/project.ipynb) developed using _python_ and _Keras_ with the aim of
+[Deep learning application](/project.ipynb) developed using _python_ and _Keras_ with the aim of
 diagnosing breast cancer
 
 ## Description
