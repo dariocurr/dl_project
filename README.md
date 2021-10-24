@@ -10,7 +10,7 @@ with the aim of diagnosing breast cancer
 Based on the results and the network presented in this
 [paper](https://arxiv.org/abs/1811.04241), I conducted an experiment on breast
 cancer classification.<br> I trained different _KNN_ classifiers and deep models
-using the _BreakHis_ dataset.
+using the [_BreakHis_](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/) dataset.
 
 To achieve this, I used well-known deep-learning frameworks for Python such as:
 
