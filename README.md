@@ -2,8 +2,8 @@
 
 ## About
 
-[Deep learning application](/project.ipynb) developed using _python_ and _Keras_ with the aim of
-diagnosing breast cancer
+[Deep learning application](/project.ipynb) developed using _python_ and _Keras_
+with the aim of diagnosing breast cancer
 
 ## Description
 
@@ -37,12 +37,6 @@ of a standard for this type of data.
 
 <br>
 
-NB: in order to replicate this experiment you need to download the
-[_BreakHis_ dataset](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/),
-extract it in a folder named _data_.
-
-<br>
-
 <br>
 
 Sections:
@@ -67,6 +61,11 @@ Sections:
 
 ## How to run
 
-In order to replicate and to extend the experiment locally, build the
-`dev container` using the [Docker](https://www.docker.com/) extension of
-[VScode](https://code.visualstudio.com/), then run the notebook.
+In order to replicate and to extend this experiment you need to:
+
+1. download the
+   [_BreakHis_ dataset](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/)
+2. extract it in a folder named `data`
+3. build the `dev container` using the [Docker](https://www.docker.com/)
+   extension of [VScode](https://code.visualstudio.com/)
+4. run the [notebook](/project.ipynb)
