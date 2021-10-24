@@ -12,8 +12,7 @@ Based on the results and the network presented in this
 cancer classification.<br> I trained different _KNN_ classifiers and deep models
 using the _BreakHis_ dataset.
 
-To achieve this, I used well-known deep-learning frameworks for
-[_python_](https://www.python.org/) such as:
+To achieve this, I used well-known deep-learning frameworks for Python such as:
 
 -   [TensorFlow](https://www.tensorflow.org/)
 -   [Keras](https://www.tensorflow.org/api_docs/python/tf/keras)
