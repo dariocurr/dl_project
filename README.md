@@ -26,7 +26,7 @@ While in the last three cases the neural network implementation is directly
 provided by _Keras_, the former was presented in 2019, through the following
 [paper](https://www.sciencedirect.com/science/article/pii/S0378437119319995),
 and was implemented in _python_ by the same researchers (see
-[_breastnet.py_](https://github.com/dariocurr/dl_project/blob/main/breastnet.py)).<br>
+[`breastnet.py`](/breastnet.py)).<br>
 
 Because of the small number of images contained in the dataset (7909 images), I
 used data augmentation, that is a regularization method, before feeding the
